@@ -1,0 +1,38 @@
+{
+  "name": "nyc-test",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "nyc npm test",
+    "test": "mocha --require babel-core/register"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "**/*-spec.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "all": true,
+    "report-dir": "reports/coverage"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "nyc": "13.2.0"
+  },
+  "engines": {
+    "node": ">= 10.11.0"
+  },
+  "eslintIgnore": [
+    "tasks/**"
+  ],
+  "dependencies": {}
+}
